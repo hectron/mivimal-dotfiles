@@ -4,20 +4,9 @@ require('options')
 require('globals')
 require('keymaps')
 
-vim.lsp.config('*', {
-  capabilities = {
-    textDocument = {
-      semanticTokens = {
-        multilineTokenSupport = true,
-      }
-    }
-  },
-  root_markers = { '.git' },
-})
-
 -- experimental UI
-
 require('vim._core.ui2').enable()
+
 --- OSC 11 sync to prevent the tiny border around the terminal
 vim.api.nvim_create_autocmd({ "UIEnter", "ColorScheme" }, {
   callback = function()
