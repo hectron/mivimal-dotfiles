@@ -11,6 +11,12 @@ vim.lsp.config('*', {
   root_markers = { '.git' },
 })
 
+
+vim.lsp.enable({
+  'lua_ls',
+  'terraformls',
+})
+
 --- I experienced some LSP clients freezing up, causing Neovim to hang
 --- We have to temporarily disable semantic tokens provider to remediate
 --- @see https://github.com/neovim/neovim/issues/36257
