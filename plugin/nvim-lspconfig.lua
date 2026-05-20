@@ -24,8 +24,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-vim.lsp.enable({
-  'lua_ls',
-  'terraformls',
-})
+--- Inline lsp progress
+vim.api.nvim_create_autocmd('LspProgress',
+  {
+    buffer = vim.fn.bufnr(),
+    callback = function(ev)
+      local value = ev.data.params.value
 
+      vim.api.nvim_echo({ { value.message or 'done' } }, false, {
+        id = 'lsp.' .. ev.data.params.token,
+        kind = 'progress',
+        source = 'vim.lsp',
+        title = value.title,
+        status = value.kind ~= 'end' and 'running' or 'success',
+        percent = value.percentage,
+      })
+    end,
+  }
+)
+
+--- Helper function to show LSP status
+vim.api.nvim_create_user_command('LspInfo', function()
+  vim.cmd('checkhealth vim.lsp')
+end, { desc = "Show LSP information" })
