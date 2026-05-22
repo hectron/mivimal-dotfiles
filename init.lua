@@ -3,6 +3,7 @@ vim.cmd.colorscheme([[catppuccin]])
 require('options')
 require('globals')
 require('keymaps')
+require('autos')
 
 -- experimental UI
 require('vim._core.ui2').enable()
