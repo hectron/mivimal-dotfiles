@@ -1,10 +1,9 @@
 vim.opt.cursorline = true
-vim.opt.complete = { '.', 'w', 'b', 'o' }
-vim.opt.completeopt = { 'menuone', 'noselect', 'fuzzy' }
+vim.opt.complete = { ".^5", "o^5" }
+vim.opt.completeopt = { "fuzzy", "menuone", "noselect", "popup" }
 vim.opt.autocomplete = true
-vim.opt.autocompletedelay = 250
 vim.opt.pumborder = 'rounded'
-
+vim.opt.pumheight = 7
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.number = true

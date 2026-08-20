@@ -8,6 +8,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_autocmd("UIEnter", {
+  desc = "Use the new ui2 interface",
+  group = augroup,
+  callback = function()
+    require('vim._core.ui2').enable()
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "UIEnter", "ColorScheme" }, {
   group = augroup,
   desc = 'OSC11 sync to prevent border around terminal',
