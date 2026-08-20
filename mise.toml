@@ -1,3 +1,4 @@
 [tools]
 lua-language-server = "latest"
 terraform-ls = "latest"
+television = "latest"

@@ -1,9 +1,17 @@
-local augroup = vim.api.nvim_create_augroup('personal.base', { clear = true })
+local augroup = vim.api.nvim_create_augroup("personal.base", { clear = true })
 
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight yank',
+vim.api.nvim_create_autocmd("UIEnter", {
+  desc = "Enable new experimental ui2 UI",
   group = augroup,
-  callback = function ()
+  callback = function()
+    require("vim._core.ui2").enable()
+  end,
+})
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight yank",
+  group = augroup,
+  callback = function()
     vim.hl.on_yank()
   end,
 })
@@ -17,8 +25,8 @@ vim.api.nvim_create_autocmd("UIEnter", {
 })
 
 vim.api.nvim_create_autocmd({ "UIEnter", "ColorScheme" }, {
+  desc = "OSC11 sync to prevent border around terminal",
   group = augroup,
-  desc = 'OSC11 sync to prevent border around terminal',
   callback = function()
     local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
 
@@ -31,8 +39,8 @@ vim.api.nvim_create_autocmd({ "UIEnter", "ColorScheme" }, {
 })
 
 vim.api.nvim_create_autocmd("UILeave", {
+  desc = "OSC11 sync to reset border around terminal",
   group = augroup,
-  desc = 'OSC11 sync to reset border around terminal',
   callback = function()
     io.write("\027]111\027\\")
   end,

@@ -1,13 +1,19 @@
 # Mivimal
 
-A minimal neovim configuration which tries to leverage as much stock Neovim as possible.
+A minimal Neovim configuration which tries to leverage as much stock Neovim as possible.
 
 > [!NOTE]
 > This configuration assumes that Neovim 0.12+ is installed. This is because [0.12 is the first release which aims to be "Out of the Box."](https://neovim.io/roadmap/)
 
+In order to get started with core tooling, make sure that [mise][mise] is installed and run:
+
+```zsh
+mise install
+```
+
 ## Additional tooling
 
-In order to enhance Neovim, we need to install tools which provide functinoality such as LSPs, Formatters, Linters, etc.
+In order to enhance Neovim, we need to install tools which provide functionality such as LSPs, Formatters, Linters, etc.
 
 Historically, this is done via Mason. In order to keep the set up light and portable, I'm opting to use [mise][mise] as the tool provider instead; whenever a new LSP, formatter, etc needs to be added, it should be installed via [mise][mise].
 

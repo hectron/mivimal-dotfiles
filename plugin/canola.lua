@@ -1,7 +1,7 @@
 vim.pack.add({
-  'https://github.com/barrettruth/canola.nvim',
+  "https://github.com/barrettruth/canola.nvim",
 })
 
-require('oil').setup({})
+require("oil").setup()
 
-vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = '[Canola] Open parent dir' })
+vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "[Canola] Open parent dir" })
