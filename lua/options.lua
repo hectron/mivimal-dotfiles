@@ -9,3 +9,5 @@ vim.opt.shiftwidth = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
+vim.o.laststatus = 3
+vim.o.cmdheight = 0
