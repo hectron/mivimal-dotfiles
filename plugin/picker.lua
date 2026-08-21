@@ -1,7 +1,19 @@
-vim.pack.add({ "https://github.com/alexpasmantier/tv.nvim" })
+vim.pack.add({ "https://github.com/ibhagwan/fzf-lua" })
 
-vim.keymap.set("n", "<Leader><Leader>", "<cmd>Tv files<CR>", { desc = "[TV] Find files" })
-vim.keymap.set("n", "<leader>fg", "<cmd>Tv text<CR>", { desc = "[TV] Live grep" })
+require("fzf-lua").setup()
+
+vim.keymap.set("n", "<Leader><Leader>", function ()
+  require("fzf-lua").files({ resume = true })
+end, { desc = "Find files" })
+
+vim.keymap.set("n", "<leader>fg", function ()
+  require("fzf-lua").live_grep_native()
+end, { desc = "Live grep" })
+
+vim.keymap.set("n", "<leader>fh", function ()
+  require("fzf-lua").helptags()
+end, { desc = "Help tags" })
+
 vim.keymap.set("n", "<leader>fc", function()
-  require("tv").tv_channel("text", vim.fn.expand("<cword>"))
-end, { desc = "[TV] Search word" })
+  require("fzf-lua").grep_cword()
+end, { desc = "Search word" })

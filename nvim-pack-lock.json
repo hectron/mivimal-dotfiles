@@ -12,6 +12,14 @@
       "rev": "1104a8deaf551fdb17fecadc87d6872397c98a6a",
       "src": "https://github.com/dmtrKovalenko/fff"
     },
+    "fzf-lua": {
+      "rev": "05e44d38de0a79c11fba5f7bf8138791b1dbdd1e",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "helpview.nvim": {
+      "rev": "06006b471890f19efeb199ffab5da49a2d624619",
+      "src": "https://github.com/OXY2DEV/helpview.nvim"
+    },
     "koda.nvim": {
       "rev": "25a5c98ca2f6bb0b69f5e2654a78f0d7c7e0721d",
       "src": "https://github.com/oskarnurm/koda.nvim"
@@ -19,6 +27,10 @@
     "lazydev.nvim": {
       "rev": "ff2cbcba459b637ec3fd165a2be59b7bbaeedf0d",
       "src": "https://github.com/folke/lazydev.nvim"
+    },
+    "markview.nvim": {
+      "rev": "5d9fc2aa6dd1c2fbdc7a68bc79b300e9967b21ff",
+      "src": "https://github.com/OXY2DEV/markview.nvim"
     },
     "mini.ai": {
       "rev": "a783ce6e1a5b3bc90519f20b51f4a5f6702734af",
@@ -44,17 +56,13 @@
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
+    "render-markdown.nvim": {
+      "rev": "4663eb3ecd538bd5062628fb6d95bbe6bdca78f6",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
     "rose-pine": {
       "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
       "src": "https://github.com/rose-pine/neovim"
-    },
-    "suannhai.nvim": {
-      "rev": "a23b9de33680a82cea19b215c9e4d7ef3891b2f4",
-      "src": "https://github.com/WeiTing1991/suannhai.nvim"
-    },
-    "tv.nvim": {
-      "rev": "4b156a22c89b50d922a916cc0453762854ac082f",
-      "src": "https://github.com/alexpasmantier/tv.nvim"
     }
   }
 }

@@ -8,6 +8,11 @@ vim.pack.add({
 
 require("koda").setup({
   transparent = true,
-  theme = { dark = "moss", light = "glade" },
+  theme = { dark = "moss", light = "light" },
 })
-vim.cmd.colorscheme([[koda]])
+
+if vim.o.background == "dark" then
+  vim.cmd.colorscheme([[rose-pine]])
+else
+  vim.cmd.colorscheme([[koda]])
+end
