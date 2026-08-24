@@ -152,6 +152,14 @@ local function render_filename()
   local filename = vim.fn.expand("%:f")
   local icon, icon_hl, _ = MiniIcons.get("file", filename)
 
+  -- TODO separate if the path is too long
+  -- local os_sep = package.config:sub(1, 1)
+  -- local parts = vim.split(filename, os_sep, { plain = true })
+
+  -- if #parts > 2 then
+  --   filename = parts[1]
+  -- end
+
   if not icon and not icon_hl then
     icon, icon_hl = M.devicons_override.default_icon.icon, M.devicons_override.default_icon.name
   end
