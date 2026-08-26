@@ -1,5 +1,7 @@
 # Mivimal
 
+<img width="1344" height="1131" alt="image" src="https://github.com/user-attachments/assets/88ff2a6c-b2ec-4fc7-9e36-bd0b938ed9a1" />
+
 A minimal Neovim configuration which tries to leverage as much stock Neovim as possible.
 
 > [!NOTE]
