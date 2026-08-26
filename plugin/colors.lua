@@ -6,6 +6,12 @@ vim.pack.add({
   },
 })
 
+require("rose-pine").setup({
+  styles = {
+    transparency = true,
+  }
+})
+
 require("koda").setup({
   transparent = true,
   theme = { dark = "moss", light = "light" },
