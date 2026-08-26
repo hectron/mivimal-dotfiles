@@ -1,6 +1,9 @@
 -- Escape insert mode with jj
 vim.keymap.set("i", "jj", "<Esc>")
 
+vim.keymap.set("n", "<S-h>", "<cmd>bprev<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+
 -- <CR> completion option
 vim.keymap.set('i', '<CR>', function()
   if vim.fn.pumvisible() == 1 then
