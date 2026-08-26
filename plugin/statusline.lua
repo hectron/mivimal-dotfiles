@@ -112,13 +112,6 @@ M.git_icons = {
   removed = " ",
 }
 
-M.diagnostic_icons = {
-  Error = " ",
-  Warn = " ",
-  Info = " ",
-  Hint = "󰌵 ",
-}
-
 M.devicons_override = {
   default_icon = {
     icon = "󰈚",
@@ -175,7 +168,6 @@ end
 function _G._statusline()
   local mode = modes[vim.fn.mode()] or vim.fn.mode():upper()
   local branch = vim.b.git_branch and "%#StlGit# " .. vim.b.git_branch .. " %*" or ""
-  -- local path = vim.b.rel_path or "%f"
   local path = render_filename()
 
   local diag = ""
@@ -211,8 +203,10 @@ function _G._statusline()
     end
   end
 
+  local lhs = color_utils.wrap_in_highlight(" " .. mode .. " ", "StlMode")
+
   --- return "%#StlMode# " .. mode .. " %*" .. branch .. " " .. path .. "%=" .. diag .. vim.bo.filetype .. " %l:%c"
-  return "%#StlMode# " .. mode .. " %*" .. " " .. "%=" .. path .. rhs
+  return lhs .. " " .. "%=" .. path .. rhs
 end
 
 vim.api.nvim_create_autocmd("BufEnter", {

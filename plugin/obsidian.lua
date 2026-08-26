@@ -13,6 +13,12 @@ local workspaces = vim.iter({
       }
     })
     :filter(function(workspace)
+      local path = workspace.path
+
+      if not path or path == "" then
+        return false
+      end
+
       return vim.fn.isdirectory(vim.fs.abspath(workspace.path)) == 1
     end)
     :totable()

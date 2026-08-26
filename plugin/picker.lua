@@ -6,6 +6,10 @@ vim.keymap.set("n", "<Leader><Leader>", function ()
   require("fzf-lua").files({ resume = true })
 end, { desc = "Find files" })
 
+vim.keymap.set("n", "<leader>be", function ()
+  require("fzf-lua").buffers()
+end, { desc = "Buffer explorer" })
+
 vim.keymap.set("n", "<leader>fg", function ()
   require("fzf-lua").live_grep_native()
 end, { desc = "Live grep" })
