@@ -1,6 +1,14 @@
 local augroup = vim.api.nvim_create_augroup("personal.base", { clear = true })
 
 vim.api.nvim_create_autocmd("UIEnter", {
+  desc = "Render custom UI elements (status bar)",
+  group = augroup,
+  callback = function()
+    require("ui")
+  end,
+})
+
+vim.api.nvim_create_autocmd("UIEnter", {
   desc = "Enable new experimental ui2 UI",
   group = augroup,
   callback = function()

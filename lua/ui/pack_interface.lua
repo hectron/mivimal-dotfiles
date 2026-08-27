@@ -191,7 +191,7 @@ local function build_content()
   add("")
 
   local help =
-    " [r] refresh  [u] update  [U] update all  [x] uninstall  [Enter] details  [q] close"
+  " [r] refresh  [u] update  [U] update all  [x] uninstall  [Enter] details  [q] close"
   local help_row = add(help)
   for start_pos, end_pos in help:gmatch("()%b[]()") do
     add_hl(help_row, start_pos - 1, end_pos - 1, "PackFloatKey")
@@ -216,10 +216,10 @@ local function build_content()
 
   local function conventional_prefix_len(message)
     return message:match("^[%w_-]+%b()!:") and #message:match("^[%w_-]+%b()!:")
-      or message:match("^[%w_-]+%b():") and #message:match("^[%w_-]+%b():")
-      or message:match("^[%w_-]+!:") and #message:match("^[%w_-]+!:")
-      or message:match("^[%w_-]+:") and #message:match("^[%w_-]+:")
-      or nil
+        or message:match("^[%w_-]+%b():") and #message:match("^[%w_-]+%b():")
+        or message:match("^[%w_-]+!:") and #message:match("^[%w_-]+!:")
+        or message:match("^[%w_-]+:") and #message:match("^[%w_-]+:")
+        or nil
   end
 
   local function commit_time_range(message) return message:find("%([^()]+%)$") end
@@ -229,14 +229,14 @@ local function build_content()
     local commits = state.commits[name]
     local progress = state.update_status[name]
     local line = plugin_indent
-      .. name
-      .. (progress and ("  " .. progress) or "")
+        .. name
+        .. (progress and ("  " .. progress) or "")
     local revision = pending
         and ("%s → %s"):format(
           short_rev(plugin.rev),
           short_rev(plugin.rev_to)
         )
-      or short_rev(plugin.rev)
+        or short_rev(plugin.rev)
 
     local row = add(line)
     mark_plugin(row, name)
@@ -255,8 +255,8 @@ local function build_content()
         progress_start,
         #line,
         progress == "updated" and "PackFloatDone"
-          or progress == "failed" and "PackFloatError"
-          or "PackFloatProgress"
+        or progress == "failed" and "PackFloatError"
+        or "PackFloatProgress"
       )
     end
     if state.expanded[name] then
@@ -302,7 +302,7 @@ local function build_content()
           local hash, message = split_commit(commit)
           local commit_line = message ~= ""
               and (detail_indent .. "%s  %s"):format(hash, message)
-            or (detail_indent .. hash)
+              or (detail_indent .. hash)
           local commit_row = add(commit_line)
           mark_plugin(commit_row, name)
           if hash:match("^%x+$") then
@@ -439,7 +439,7 @@ local function load_commits(plugin, check_id)
     vim.schedule(function()
       if state.check_id ~= check_id or not valid_buffer() then return end
       state.commits[name] = result.code == 0 and split_lines(result.stdout)
-        or {}
+          or {}
       render()
     end)
   end)
@@ -450,7 +450,7 @@ local function finish_refresh(check_id, failures)
 
   state.checking = false
   state.status = failures > 0 and ("ready, %d fetch failed"):format(failures)
-    or "ready"
+      or "ready"
   render()
 end
 
@@ -576,7 +576,7 @@ local function update_plugins(names)
 
   vim.schedule(function()
     local ok, err =
-      pcall(vim.pack.update, names, { force = true, offline = true })
+        pcall(vim.pack.update, names, { force = true, offline = true })
     if not ok then
       vim.notify("vim.pack: " .. tostring(err), vim.log.levels.ERROR)
       for _, name in ipairs(names) do
@@ -615,9 +615,9 @@ end
 
 local function update_all()
   local names = vim
-    .iter(state.pending)
-    :map(function(plugin) return plugin.spec.name end)
-    :totable()
+      .iter(state.pending)
+      :map(function(plugin) return plugin.spec.name end)
+      :totable()
   update_plugins(names)
 end
 

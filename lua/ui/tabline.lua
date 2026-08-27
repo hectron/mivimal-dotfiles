@@ -39,8 +39,8 @@ function M.render()
   end
 
   return color_utils.wrap_in_highlight("    ", "TabLineFill")
-    .. table.concat(out)
-    .. "%#TabLineFill#"
+      .. table.concat(out)
+      .. "%#TabLineFill#"
 end
 
 return M

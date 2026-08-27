@@ -1,6 +1,4 @@
-vim.pack.add({
-  "https://github.com/barrettruth/canola.nvim",
-})
+vim.pack.add({ "https://github.com/barrettruth/canola.nvim" })
 
 require("oil").setup()
 

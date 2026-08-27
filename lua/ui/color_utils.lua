@@ -9,8 +9,8 @@ M.hex_to_rgb = function(hex)
 
   return {
     tonumber(_hex:sub(2, 3), 16),
-    tonumber(_hex:sub(4,5), 16),
-    tonumber(_hex:sub(6,7), 16),
+    tonumber(_hex:sub(4, 5), 16),
+    tonumber(_hex:sub(6, 7), 16),
   }
 end
 

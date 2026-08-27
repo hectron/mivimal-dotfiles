@@ -20,12 +20,16 @@ vim.lsp.enable({
 --- We have to temporarily disable semantic tokens provider to remediate
 --- @see https://github.com/neovim/neovim/issues/36257
 vim.api.nvim_create_autocmd("LspAttach", {
+  ---@param args vim.event.lspattach.data
   callback = function(args)
+    local buf = args.buf
     local client = vim.lsp.get_client_by_id(args.data.client_id)
 
     if client and client.server_capabilities then
       client.server_capabilities.semanticTokensProvider = nil
     end
+
+    vim.keymap.set("n", "<leader>F", vim.lsp.buf.format, { desc = "[F]ormat", buf = buf })
   end,
 })
 

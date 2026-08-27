@@ -1,6 +1,4 @@
-vim.pack.add({
-  "https://github.com/obsidian-nvim/obsidian.nvim",
-})
+vim.pack.add({ "https://github.com/obsidian-nvim/obsidian.nvim" })
 
 local workspaces = vim.iter({
       {

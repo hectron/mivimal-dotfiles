@@ -194,7 +194,9 @@ function _G._statusline()
     local line_count = vim.api.nvim_buf_line_count(0)
     local current_cursor_and_line_max_size = math.floor(math.log(line_count, 10))
 
-    rhs = rhs .. " %L lines" .. sep .. string.format("%%-%dl:%%-%dc", current_cursor_and_line_max_size, current_cursor_and_line_max_size)
+    rhs = rhs ..
+    " %L lines" ..
+    sep .. string.format("%%-%dl:%%-%dc", current_cursor_and_line_max_size, current_cursor_and_line_max_size)
     rhs = rhs .. sep .. filetype:upper() .. sep
 
     if vim.bo.fileencoding ~= "" then

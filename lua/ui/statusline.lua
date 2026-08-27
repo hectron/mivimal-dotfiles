@@ -188,8 +188,8 @@ M.render = function()
     path = render_path(root, buffer_filepath),
     -- git = render_git_info(root),
     modifiable = vim.api.nvim_get_option_value("modifiable", { buf = buf })
-      and (vim.api.nvim_get_option_value("modified", { buf = buf }) and icon.modified or "")
-      or icon.nomodifiable,
+        and (vim.api.nvim_get_option_value("modified", { buf = buf }) and icon.modified or "")
+        or icon.nomodifiable,
     read_only = vim.api.nvim_get_option_value("readonly", { buf = buf }) and icon.readonly or "",
     seperator = seperator,
     diagnostics = render_diagnostics(),
